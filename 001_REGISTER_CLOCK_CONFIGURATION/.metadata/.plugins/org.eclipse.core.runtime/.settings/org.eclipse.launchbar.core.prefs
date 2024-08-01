@@ -1,0 +1,12 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:002_REGISTER LED_BLINK.elf
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:002_REGISTER\ LED_BLINK.elf/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:002_REGISTER\ LED_BLINK.elf/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:002_REGISTER_LED_BLINK.elf/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:002_REGISTER_LED_BLINK.elf/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:002_STDP_LED_BLINK.elf/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:002_STDP_LED_BLINK.elf/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:003_STDP_BUTTON_CONTROL.elf/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:003_STDP_BUTTON_CONTROL.elf/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

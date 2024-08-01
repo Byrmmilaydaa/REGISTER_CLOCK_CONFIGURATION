@@ -1,0 +1,164 @@
+!SESSION 2024-08-01 21:00:31.158 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=tr_TR
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2024-08-01 21:01:17.958
+!MESSAGE Loading product manager
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2024-08-01 21:01:17.961
+!MESSAGE OS info: Windows 10, 10.0, x86
+
+!ENTRY TrueSTUDIO 1 0 2024-08-01 21:01:18.313
+!MESSAGE Target: STM32, Version: 9.3.0, Build date: 20190212-0734, Installation dir: /C:/Program Files (x86)/Atollic/TrueSTUDIO for STM32 9.3.0/ide/
+
+!ENTRY TrueSTUDIO 1 0 2024-08-01 21:01:18.314
+!MESSAGE Workspace: C:\Users\ilayda\Desktop\stm32f_dersleri\001_REGISTER_CLOCK_CONFIGURATION\001_REGISTER_CLOCK_CONFIGURATION
+
+!ENTRY org.eclipse.jface 2 0 2024-08-01 21:01:18.800
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-08-01 21:01:18.800
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.EditPropertiesCommand,Show Properties,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@519bfb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1914bb5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.atollic.truestudio.integration.processorexpert 0 0 2024-08-01 21:01:21.301
+!MESSAGE Atollic TrueSTUDIO Processor Expert integration is up.
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2024-08-01 21:01:21.328
+!MESSAGE Code Review is up.
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-08-01 21:01:21.582
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ilayda'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2024-08-01 21:01:26.283
+!MESSAGE Unloading product manager
+!SESSION 2024-08-01 21:01:30.200 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=tr_TR
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2024-08-01 21:01:30.831
+!MESSAGE Loading product manager
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2024-08-01 21:01:30.834
+!MESSAGE OS info: Windows 10, 10.0, x86
+
+!ENTRY TrueSTUDIO 1 0 2024-08-01 21:01:31.213
+!MESSAGE Target: STM32, Version: 9.3.0, Build date: 20190212-0734, Installation dir: /C:/Program Files (x86)/Atollic/TrueSTUDIO for STM32 9.3.0/ide/
+
+!ENTRY TrueSTUDIO 1 0 2024-08-01 21:01:31.213
+!MESSAGE Workspace: C:\Users\ilayda\Desktop\stm32f_dersleri\001_REGISTER_CLOCK_CONFIGURATION\001_REGISTER_CLOCK_CONFIGURATION
+
+!ENTRY org.eclipse.jface 2 0 2024-08-01 21:01:31.793
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-08-01 21:01:31.793
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.EditPropertiesCommand,Show Properties,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@165dd88,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@21588e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.atollic.truestudio.integration.processorexpert 0 0 2024-08-01 21:01:33.197
+!MESSAGE Atollic TrueSTUDIO Processor Expert integration is up.
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-08-01 21:01:33.199
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ilayda'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2024-08-01 21:01:33.219
+!MESSAGE Code Review is up.
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:42.300
+!MESSAGE Indexed '004_STDP_LED_WITH_BUTTON' (38 sources, 82 headers) in 1,67 sec: 9.722 declarations; 33.110 references; 1 unresolved inclusions; 34 syntax errors; 0 unresolved names (%0)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:43.329
+!MESSAGE Indexed '006_1_STDP_DAC' (38 sources, 82 headers) in 1,02 sec: 9.724 declarations; 33.009 references; 1 unresolved inclusions; 34 syntax errors; 0 unresolved names (%0)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:44.546
+!MESSAGE Indexed '007_1_STDP_TIMER_INTERRUPT' (38 sources, 84 headers) in 1,06 sec: 9.742 declarations; 32.985 references; 1 unresolved inclusions; 36 syntax errors; 7 unresolved names (%0,016)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:45.901
+!MESSAGE Indexed 'STDP_LED_BLINK' (38 sources, 82 headers) in 1,06 sec: 9.713 declarations; 32.973 references; 1 unresolved inclusions; 37 syntax errors; 9 unresolved names (%0,021)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:46.929
+!MESSAGE Indexed '005_2_REGISTER_ADC' (38 sources, 84 headers) in 1,02 sec: 9.738 declarations; 33.020 references; 1 unresolved inclusions; 35 syntax errors; 0 unresolved names (%0)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:47.901
+!MESSAGE Indexed '005_1_STD_ADC_WITH_LED' (38 sources, 84 headers) in 0,963 sec: 9.743 declarations; 33.103 references; 1 unresolved inclusions; 34 syntax errors; 1 unresolved names (%0,0023)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:48.875
+!MESSAGE Indexed '002_REGISTER LED_BLINK' (38 sources, 82 headers) in 0,966 sec: 9.723 declarations; 33.167 references; 1 unresolved inclusions; 34 syntax errors; 0 unresolved names (%0)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:50.088
+!MESSAGE Indexed '002_STDP_LED_BLINK' (38 sources, 82 headers) in 1,06 sec: 9.718 declarations; 33.016 references; 1 unresolved inclusions; 35 syntax errors; 1 unresolved names (%0,0023)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:51.234
+!MESSAGE Indexed '007_0_STDP_TIMER_COUNTER' (38 sources, 82 headers) in 1 sec: 9.717 declarations; 32.964 references; 1 unresolved inclusions; 36 syntax errors; 4 unresolved names (%0,0094)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:52.256
+!MESSAGE Indexed '005_STD_ADC' (38 sources, 82 headers) in 1,01 sec: 9.725 declarations; 33.051 references; 1 unresolved inclusions; 34 syntax errors; 0 unresolved names (%0)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:53.218
+!MESSAGE Indexed '006_2_ADC_DAC' (38 sources, 82 headers) in 0,953 sec: 9.726 declarations; 33.089 references; 1 unresolved inclusions; 34 syntax errors; 0 unresolved names (%0)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:54.299
+!MESSAGE Indexed '003_STDP_BUTTON_CONTROL' (38 sources, 82 headers) in 1,07 sec: 9.720 declarations; 32.985 references; 1 unresolved inclusions; 36 syntax errors; 1 unresolved names (%0,0023)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:55.255
+!MESSAGE Indexed '007_3_1_REGISTER_TIMER' (38 sources, 82 headers) in 0,947 sec: 9.716 declarations; 32.943 references; 1 unresolved inclusions; 35 syntax errors; 3 unresolved names (%0,007)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:56.374
+!MESSAGE Indexed '004_STD_EXTERNAL_INTERRUPT_WITH_BUTTON' (38 sources, 82 headers) in 0,965 sec: 9.716 declarations; 27.889 references; 1 unresolved inclusions; 36 syntax errors; 5.225 unresolved names (%12)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:57.505
+!MESSAGE Indexed '007_0_STDP_TIMER_LED_COUNTER' (38 sources, 82 headers) in 0,97 sec: 9.711 declarations; 32.172 references; 1 unresolved inclusions; 38 syntax errors; 839 unresolved names (%2)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:58.495
+!MESSAGE Indexed '006_0_REGISTER_DAC' (38 sources, 82 headers) in 0,981 sec: 9.721 declarations; 33.085 references; 1 unresolved inclusions; 35 syntax errors; 1 unresolved names (%0,0023)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:02:59.719
+!MESSAGE Indexed '004_2_STD_MULTI_EXTERNAL_INTERRUPT' (38 sources, 82 headers) in 1,05 sec: 9.726 declarations; 33.198 references; 1 unresolved inclusions; 34 syntax errors; 2 unresolved names (%0,0047)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-01 21:04:21.325
+!MESSAGE Indexed '002_0_STDP_LED_BLINK' (0 sources, 0 headers) in 0,001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (%0)
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2024-08-01 22:02:17.572
+!MESSAGE Unloading product manager

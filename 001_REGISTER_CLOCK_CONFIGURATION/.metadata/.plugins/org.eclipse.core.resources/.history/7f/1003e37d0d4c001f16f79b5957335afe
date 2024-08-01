@@ -1,0 +1,100 @@
+#include "stm32f4xx.h"
+#include "stm32f4_discovery.h"
+//yapýlacak iþlemler;
+//ADC ler APB2 clock hattýna baðlýdýr.
+//deðiþtirmemiz gereken iþlemler var[ HSE Frequency=8000000 , HSE_VALUE=8000000]
+
+GPIO_InitTypeDef GPIO_InitStruct;
+//adc için iki farklý yapý oluþturmamýz gerekiyor.
+ADC_InitTypeDef ADC_InitStruct;
+ADC_CommonInitTypeDef ADC_CommonInitStruct;
+
+//12bitlik bi okuma yapacaðým için 12 bitlik bi veri tanýmlamam lazým(en az 16 bit olabilir)
+uint16_t adc_value;
+
+
+void ADC_Config(){
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);//clock hattýný aktif et
+
+	//ADC_CommonInitStruct.ADC_DMAAccessMode //Arada cpu olmadan okuduðu veriyi direkt belleðe yazma iþlemi bu yüzden bunu kullanmýyoruz.
+	ADC_CommonInitStruct.ADC_Mode= ADC_Mode_Independent ; //tek bir adc okumasý yapýyoruz ve o da baðýmsýz olacak
+	ADC_CommonInitStruct.ADC_Prescaler= ADC_Prescaler_Div4; //2-4-6-8 bölme iþlemi [adc max 36MHz çalýþýyor ve clock hattý ise max 84MHz gösteriyor bu deðeri 4 bölersek adc yi daha verimli kullanabiliriz]
+	//ADC_CommonInitStruct.ADC_TwoSamplingDelay //iki örnek arasýnda süre demek þuanda buna ihtiyacýmýz yok
+
+	ADC_CommonInit(&ADC_CommonInitStruct);
+
+	//ADC_InitStruct.ADC_ContinuousConvMode //sürekli çevrim modu
+	//ADC_InitStruct.ADC_DataAlign //verilerin nereye yaslanacaðý
+	//ADC_InitStruct.ADC_ExternalTrigConv //harici tetikleme ile iþlemi baþlatma
+	//ADC_InitStruct.ADC_NbrOfConversion //çoklu adc iþlemlerinde kullanýyoruz
+	//ADC_InitStruct.ADC_ScanConvMode //tarama modu
+	ADC_InitStruct.ADC_Resolution= ADC_Resolution_12b; //çözünürlük kaç bitte okuma yapacaksýnýz.
+
+	ADC_Init(ADC1,&ADC_InitStruct);
+
+	//ekstra olarak stm32f4 yapýsýnda çevresel birimlerin aktif edilmesi için ADC_Cmd birimi vardýr.
+
+	ADC_Cmd(ADC1, ENABLE);
+
+}
+
+void GPIO_Config()
+{
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+
+	GPIO_InitStruct.GPIO_Mode= GPIO_Mode_AN; //analog
+	GPIO_InitStruct.GPIO_Pin= GPIO_Pin_0; //hangi pini kullandýðýmýz önemli deðil
+	GPIO_InitStruct.GPIO_OType= GPIO_OType_PP;
+	GPIO_InitStruct.GPIO_PuPd= GPIO_PuPd_NOPULL;
+	GPIO_InitStruct.GPIO_Speed= GPIO_Speed_100MHz;
+
+	GPIO_Init(GPIOA, &GPIO_InitStruct);
+}
+
+//ADC okumasý yapabileceðimiz bir fonksiyon yazalým
+uint16_t Read_ADC()
+{
+	//adc okuma deðerlerim nasýl olacak asýl önemli olan soru bu
+	//libraries-->STM32F4xx_StdPeriph_Driver->src-->stm32f4xx_adc.c gidiyoruz ve bu adc nasýl kullanacaðýmýzý söylüyor bize
+
+	//yapýlacak iþlemler sýrasý ile;
+
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_0, 1, ADC_SampleTime_56Cycles);//okuma için bu fonksiyonu kullanmamýz gerekiyor. aldýðý parametreleri tanýmlýyoruz. rank olarak 1 giriyoruz sabittir. örnek alma süresi 56
+	//adc1 in 0.kanalýnda 56 çevrimde 1 okuma yap demek
+
+	ADC_SoftwareStartConv(ADC1);//adc yi yazýlýmsal olarak baþlat demek
+
+	//adc okumasý bitene kadar beklememiz lazým. eoc bayraðýnýn kalkana kadar beklememiz lazým
+
+	while(ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET); //reset ise bekle demek
+
+	return ADC_GetConversionValue(ADC1);
+}
+
+
+
+int main(void)
+{
+
+  while (1)
+  {
+	  adc_value= Read_ADC();//sürekli adc okumasý yapabiliriz
+
+  }
+}
+
+
+
+void EVAL_AUDIO_TransferComplete_CallBack(uint32_t pBuffer, uint32_t Size){
+  /* TODO, implement your code here */
+  return;
+}
+
+/*
+ * Callback used by stm324xg_eval_audio_codec.c.
+ * Refer to stm324xg_eval_audio_codec.h for more info.
+ */
+uint16_t EVAL_AUDIO_GetSampleCallBack(void){
+  /* TODO, implement your code here */
+  return -1;
+}

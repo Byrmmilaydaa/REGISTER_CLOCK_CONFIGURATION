@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;STDP_LED_BLINK&apos; to &apos;002_0_STDP_LED_BLINK&apos;" description="Rename resource &apos;STDP_LED_BLINK&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/STDP_LED_BLINK" name="002_0_STDP_LED_BLINK" stamp="1722535461220" updateReferences="true"/>
+</session>

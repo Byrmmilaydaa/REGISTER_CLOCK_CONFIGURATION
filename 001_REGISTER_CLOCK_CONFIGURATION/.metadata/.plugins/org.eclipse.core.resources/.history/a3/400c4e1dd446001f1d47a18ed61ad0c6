@@ -1,0 +1,99 @@
+#include "stm32f4xx.h"
+#include "stm32f4_discovery.h"
+//2 tane harici butonumuz olacak
+//butonlardan birine bastýðýmýzda interrupta girecek
+//diðer butona bastýðýmýzda da interrupta girecek ama 1.buton 2.butona göre öncelikli olacak
+//1.butona basýlýp 2.butona basýlýrsa 1.butonun interrutý bitmeden diðerine geçmeyecek ama tam tersi olmayacak
+//2.butona basýlýp 1. butona basýlýrsa 2. butonun interruptý duracak 1.butonun interruptý yapýlacak sonra kaldýðý yerden devam edecek
+//ledler ilk baþta yanýk olmasýn 1.butona basýnca saat yönünde yansýn
+//2.butona basýldýðýnda saatin tersi yönünde yansýn
+
+GPIO_InitTypeDef  GPIO_InitStruct; //nesneleri oluþturduk
+EXTI_InitTypeDef  EXTI_InitStruct;
+NVIC_InitTypeDef  NVIC_InitStruct;
+
+void GPIO_Config(){
+
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD,ENABLE); //ledlerin clock hattýný aktif ettik
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA,ENABLE); //butonun clock hattýný aktif ettik
+
+
+	GPIO_InitStruct.GPIO_Mode=GPIO_Mode_OUT;
+	GPIO_InitStruct.GPIO_Pin= GPIO_Pin_12| GPIO_Pin_13| GPIO_Pin_14| GPIO_Pin_15;
+	GPIO_InitStruct.GPIO_OType= GPIO_OType_PP;
+	GPIO_InitStruct.GPIO_PuPd= GPIO_PuPd_NOPULL;
+	GPIO_InitStruct.GPIO_Speed=GPIO_Speed_100MHz;
+
+
+	GPIO_Init(GPIOD,&GPIO_InitStruct);
+
+	//butonun GPIO iþlemlerine baþlayalým ;
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2;
+	GPIO_InitStruct.GPIO_Mode= GPIO_Mode_IN;
+	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_DOWN;
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_100MHz;
+
+
+	GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+}
+
+void EXTI_Config(){
+	//clock hattýný aktif edelim
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);//interruptýn clock hattý
+
+	EXTI_InitStruct.EXTI_Line= EXTI_Line1| EXTI_Line2; //GPIO_Pin_1 | GPIO_Pin_2 deðerlerini kullandýðýmýz için
+	EXTI_InitStruct.EXTI_LineCmd = ENABLE; //portlar aktif olsun mu olmasýn mý?
+	EXTI_InitStruct.EXTI_Mode=EXTI_Mode_Interrupt;
+	EXTI_InitStruct.EXTI_Trigger= EXTI_Trigger_Rising; //düþen kenar mý olsun yükselen kenar mý
+
+
+	EXTI_Init(&EXTI_InitStruct);
+
+	//birden fazla interrupt yöneticisi kullanacaðýmýz zaman fazladan fonksiyon yazýyoruz.
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
+	//bizim NVIC_PriorityGroup bu gruptan 0 dan 4 e kadar deðer almasý gerekiyor.
+	//0 biti seçersek 0 bit ön hazýrlýða 4 bit alt hazýrlýða gidecek
+	//1 bit seçersek 1 bit ön hazýrlýða 3 bit alt hazýrlýða
+
+	//bizim 2 butonumuz olduðundan dolayý 0 bit yerine 1 biti seçmem daha mantýklý olur.
+
+	//struct yapýsýný kullanýp ayarlamalarý daha rahat yapabilirim.
+
+	NVIC_InitStruct.NVIC_IRQChannel= EXTI1_IRQn; //lin1 için kanal yazýldý
+	NVIC_InitStruct.NVIC_IRQChannelCmd= ENABLE; //bu kanalý aktif edelim mi
+
+	//öncelik sýrasýna geldik þimdi
+	NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority
+
+
+
+
+
+}
+
+int main(void)
+{
+	GPIO_Config();
+	EXTI_Config();
+
+
+  while (1)
+  {
+
+  }
+}
+
+
+
+void EVAL_AUDIO_TransferComplete_CallBack(uint32_t pBuffer, uint32_t Size){
+  /* TODO, implement your code here */
+  return;
+}
+
+
+uint16_t EVAL_AUDIO_GetSampleCallBack(void){
+  /* TODO, implement your code here */
+  return -1;
+}
